@@ -1,0 +1,2160 @@
+{
+ "version": "1.0.0",
+ "generated_by": "data/build_fixtures.py",
+ "generated_at": "2026-09-20T00:00:00Z",
+ "scenarios": [
+  {
+   "id": "S1",
+   "title": "High-Covariance Conjunction -> False Alarm Cleared (Fuel Saved)",
+   "trigger_type": "CDM",
+   "summary": "CDM reports a 120 m miss with a debris fragment, but the fragment's cross-track sigma is 4.5 km. The agent must refuse to manoeuvre, task radar, collapse covariance and re-screen.",
+   "objects": [
+    {
+     "id": "ASAI-COM-7",
+     "name": "ASAI-COM-7",
+     "norad_id": 61007,
+     "kind": "satellite",
+     "cospar_id": "2025-031G",
+     "operator_id": "OP-ORBITLINK",
+     "launch_id": "L-2025-031",
+     "parent_object_id": null,
+     "fragmentation_event_id": null,
+     "tle": {
+      "line1": "1 61007U 25031G   26265.13472222  .00000000  00000-0  10000-4 0  9994",
+      "line2": "2 61007  53.0500 118.4000 0001000  90.0000  12.0000 15.05490646    17"
+     },
+     "hbr_m": 12.5,
+     "mass_kg": 260.0,
+     "isp_s": 1500.0,
+     "bus_type": "OL-Bus-2 (Hall thruster)",
+     "status": "operational",
+     "orbit_regime": "LEO",
+     "country": "USA",
+     "rcs_category": "medium",
+     "registered": true,
+     "launch_date": "2025-02-14",
+     "role": "primary"
+    },
+    {
+     "id": "COSMOS-2251-DEB-34459",
+     "name": "COSMOS 2251 DEB",
+     "norad_id": 34459,
+     "kind": "debris",
+     "cospar_id": "",
+     "operator_id": null,
+     "launch_id": null,
+     "parent_object_id": "COSMOS-2251",
+     "fragmentation_event_id": "FRAG-2009-02-10-IRIDIUM33-COSMOS2251",
+     "tle": {
+      "line1": "1 34459U 93036BFF 26265.13472222  .00000000  00000-0  00000-0 0  9990",
+      "line2": "2 34459  77.8612 212.2643 1171400  52.4501   0.5336 12.49522282    14"
+     },
+     "hbr_m": 12.5,
+     "mass_kg": null,
+     "isp_s": null,
+     "bus_type": "",
+     "status": "operational",
+     "orbit_regime": "LEO",
+     "country": "Russia",
+     "rcs_category": "small",
+     "registered": true,
+     "launch_date": null,
+     "role": "secondary"
+    },
+    {
+     "id": "COSMOS-2251",
+     "name": "COSMOS 2251",
+     "norad_id": 22675,
+     "kind": "satellite",
+     "cospar_id": "1993-036A",
+     "operator_id": "OP-RU-SPACE-FORCES",
+     "launch_id": "L-1993-036",
+     "parent_object_id": null,
+     "fragmentation_event_id": null,
+     "tle": null,
+     "hbr_m": 4.0,
+     "mass_kg": 900.0,
+     "isp_s": null,
+     "bus_type": "Strela-2M",
+     "status": "non-operational",
+     "orbit_regime": "LEO",
+     "country": "Russia",
+     "rcs_category": "medium",
+     "registered": true,
+     "launch_date": "1993-06-16",
+     "role": "parent"
+    },
+    {
+     "id": "ASAI-COM-5",
+     "name": "ASAI-COM-5",
+     "norad_id": 61005,
+     "kind": "satellite",
+     "cospar_id": "2025-031E",
+     "operator_id": "OP-ORBITLINK",
+     "launch_id": "L-2025-031",
+     "parent_object_id": null,
+     "fragmentation_event_id": null,
+     "tle": {
+      "line1": "1 61005U 25031E   26265.13472222  .00000000  00000-0  10000-4 0  9992",
+      "line2": "2 61005  53.0500 118.4000 0001000  90.0000   4.0000 15.05490646    16"
+     },
+     "hbr_m": 12.5,
+     "mass_kg": 260.0,
+     "isp_s": null,
+     "bus_type": "OL-Bus-2",
+     "status": "operational",
+     "orbit_regime": "LEO",
+     "country": "USA",
+     "rcs_category": "medium",
+     "registered": true,
+     "launch_date": "2025-02-14",
+     "role": "neighbor"
+    },
+    {
+     "id": "ASAI-COM-6",
+     "name": "ASAI-COM-6",
+     "norad_id": 61006,
+     "kind": "satellite",
+     "cospar_id": "2025-031F",
+     "operator_id": "OP-ORBITLINK",
+     "launch_id": "L-2025-031",
+     "parent_object_id": null,
+     "fragmentation_event_id": null,
+     "tle": {
+      "line1": "1 61006U 25031F   26265.13472222  .00000000  00000-0  10000-4 0  9993",
+      "line2": "2 61006  53.0500 118.4000 0001000  90.0000   8.0000 15.05490646    11"
+     },
+     "hbr_m": 12.5,
+     "mass_kg": 260.0,
+     "isp_s": null,
+     "bus_type": "OL-Bus-2",
+     "status": "operational",
+     "orbit_regime": "LEO",
+     "country": "USA",
+     "rcs_category": "medium",
+     "registered": true,
+     "launch_date": "2025-02-14",
+     "role": "neighbor"
+    }
+   ],
+   "graph": {
+    "operators": [
+     {
+      "id": "OP-ORBITLINK",
+      "name": "OrbitLink Communications",
+      "country": "USA",
+      "designation": "commercial",
+      "contact_protocol": "Space-Track STC + 24/7 NOC email",
+      "stc_responsive": true
+     },
+     {
+      "id": "OP-RU-SPACE-FORCES",
+      "name": "Russian Space Forces (legacy Strela operator)",
+      "country": "Russia",
+      "designation": "military",
+      "contact_protocol": "none (defunct object)",
+      "stc_responsive": false
+     }
+    ],
+    "launch_events": [
+     {
+      "id": "L-2025-031",
+      "name": "OrbitLink Group 7",
+      "launch_date": "2025-02-14",
+      "site": "Vandenberg SLC-4E",
+      "booster": "Falcon 9 B5",
+      "cospar_launch_id": "2025-031",
+      "payload_ids": [
+       "ASAI-COM-5",
+       "ASAI-COM-6",
+       "ASAI-COM-7"
+      ],
+      "declared_payload_count": 3
+     },
+     {
+      "id": "L-1993-036",
+      "name": "Cosmos 2251 launch",
+      "launch_date": "1993-06-16",
+      "site": "Plesetsk 132/1",
+      "booster": "Kosmos-3M",
+      "cospar_launch_id": "1993-036",
+      "payload_ids": [
+       "COSMOS-2251"
+      ],
+      "declared_payload_count": 1
+     }
+    ],
+    "ground_stations": [
+     {
+      "id": "GS-LEOLABS-KSR",
+      "name": "LeoLabs Kiwi Space Radar",
+      "latitude_deg": -45.04,
+      "longitude_deg": 170.09,
+      "altitude_m": 390.0,
+      "operator_id": null,
+      "sensor_type": "radar",
+      "min_elevation_deg": 5.0
+     },
+     {
+      "id": "GS-ORBITLINK-NOC",
+      "name": "OrbitLink Redmond TT&C",
+      "latitude_deg": 47.67,
+      "longitude_deg": -122.12,
+      "altitude_m": 0.0,
+      "operator_id": "OP-ORBITLINK",
+      "sensor_type": "telemetry",
+      "min_elevation_deg": 10.0
+     }
+    ],
+    "edges": [
+     {
+      "type": "ORBITAL_NEIGHBOR",
+      "source": "ASAI-COM-7",
+      "target": "ASAI-COM-6",
+      "attrs": {
+       "shell_km": 0.4
+      }
+     },
+     {
+      "type": "ORBITAL_NEIGHBOR",
+      "source": "ASAI-COM-6",
+      "target": "ASAI-COM-5",
+      "attrs": {
+       "shell_km": 0.4
+      }
+     },
+     {
+      "type": "CO_LAUNCHED_WITH",
+      "source": "ASAI-COM-7",
+      "target": "ASAI-COM-6",
+      "attrs": {}
+     },
+     {
+      "type": "CO_LAUNCHED_WITH",
+      "source": "ASAI-COM-7",
+      "target": "ASAI-COM-5",
+      "attrs": {}
+     },
+     {
+      "type": "IN_CONJUNCTION_WITH",
+      "source": "ASAI-COM-7",
+      "target": "COSMOS-2251-DEB-34459",
+      "attrs": {
+       "tca": "2026-09-22T03:14:00+00:00",
+       "miss_km": 0.1204,
+       "pc": 0.0002688332328480597
+      }
+     },
+     {
+      "type": "TRACKED_BY",
+      "source": "ASAI-COM-7",
+      "target": "GS-ORBITLINK-NOC",
+      "attrs": {}
+     },
+     {
+      "type": "TRACKED_BY",
+      "source": "COSMOS-2251-DEB-34459",
+      "target": "GS-LEOLABS-KSR",
+      "attrs": {}
+     }
+    ]
+   },
+   "conjunction": {
+    "primary_id": "ASAI-COM-7",
+    "secondary_id": "COSMOS-2251-DEB-34459",
+    "tca": "2026-09-22T03:14:00Z",
+    "frame": "J2000",
+    "states_pre": {
+     "ASAI-COM-7": {
+      "epoch": "2026-09-22T03:14:00Z",
+      "r": [
+       -2900.119259,
+       -3186.459426,
+       5415.706363
+      ],
+      "v": [
+       4.325887499,
+       -6.105900267,
+       -1.272931232
+      ],
+      "frame": "J2000"
+     },
+     "COSMOS-2251-DEB-34459": {
+      "epoch": "2026-09-22T03:14:00Z",
+      "r": [
+       -2900.011419,
+       -3186.501753,
+       5415.739208
+      ],
+      "v": [
+       5.989287459,
+       2.529623598,
+       4.69873756
+      ],
+      "frame": "J2000"
+     }
+    },
+    "covariance_pre": {
+     "primary_rtn": [
+      [
+       0.0025000000000000005,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.04000000000000001,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0025000000000000005
+      ]
+     ],
+     "secondary_rtn": [
+      [
+       0.09,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       9.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       20.25
+      ]
+     ],
+     "note": "secondary from sparse 2-track radar fit; cross-track sigma 4.5 km"
+    },
+    "states_post": {
+     "COSMOS-2251-DEB-34459": {
+      "epoch": "2026-09-22T03:14:00Z",
+      "r": [
+       -2896.569198,
+       -3188.012891,
+       5417.332343
+      ],
+      "v": [
+       5.989287459,
+       2.529623598,
+       4.69873756
+      ],
+      "frame": "J2000"
+     }
+    },
+    "covariance_post": {
+     "primary_rtn": [
+      [
+       0.0025000000000000005,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.04000000000000001,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0025000000000000005
+      ]
+     ],
+     "secondary_rtn": [
+      [
+       0.0025000000000000005,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0225,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.010000000000000002
+      ]
+     ],
+     "note": "after dedicated LeoLabs KSR tracking pass at TCA-6h"
+    },
+    "screening_pc_threshold": 0.0001,
+    "cdm_reported_miss_km": 0.1204,
+    "cdm_reported_pc": 0.0002688332328480597
+   },
+   "observations": [
+    {
+     "sensor_type": "radar",
+     "sensor_id": "GS-LEOLABS-KSR",
+     "epoch": "2026-09-21T21:14:00Z",
+     "description": "Dedicated tracking pass on COSMOS 2251 DEB; 3 detections, 90 s arc.",
+     "governance_level": "L0",
+     "effect": "conjunction.states_post",
+     "payload": {
+      "detections": 3,
+      "arc_s": 90,
+      "range_noise_m": 15
+     }
+    },
+    {
+     "sensor_type": "stc",
+     "sensor_id": "OP-ORBITLINK",
+     "epoch": "2026-09-21T18:14:00Z",
+     "description": "Operator confirms no planned manoeuvre for ASAI-COM-7 in the window.",
+     "governance_level": "L1",
+     "effect": "none",
+     "payload": {
+      "planned_burn": false
+     }
+    }
+   ],
+   "light_curve": null,
+   "kinematics": null,
+   "cam_policy": null,
+   "expected": {
+    "classification": "debris_collision_risk_false_alarm",
+    "severity": "ADVISORY",
+    "governance_level": "L0",
+    "recommended_action": "CANCEL_CAM",
+    "key_numbers": {
+     "pc_pre": 0.0002688332328480597,
+     "pc_post": 8.317938188001912e-107,
+     "miss_pre_km": 0.12041594578758502,
+     "miss_post_km": 4.202380277889968,
+     "sigma_cross_pre_km": 4.5
+    }
+   }
+  },
+  {
+   "id": "S2",
+   "title": "Non-Cooperative Inspector Satellite -> Covert RPO Detection",
+   "trigger_type": "KINEMATIC",
+   "summary": "An unregistered co-passenger from a foreign launch executes a 0.57 deg low-thrust plane change and drifts into the GEO slot of a defense comsat, holding 35 km trailing.",
+   "objects": [
+    {
+     "id": "AEGIS-COM-3",
+     "name": "AEGIS-COM 3",
+     "norad_id": 59210,
+     "kind": "satellite",
+     "cospar_id": "2024-044A",
+     "operator_id": "OP-ALLIED-DEFENSE-COMMS",
+     "launch_id": "L-2024-044",
+     "parent_object_id": null,
+     "fragmentation_event_id": null,
+     "tle": {
+      "line1": "1 59210U 24044A   26264.50000000  .00000000  00000-0  00000-0 0  9996",
+      "line2": "2 59210   0.0500  95.0000 0002000 180.0000  42.3000  1.00270000    19"
+     },
+     "hbr_m": 8.0,
+     "mass_kg": 4200.0,
+     "isp_s": null,
+     "bus_type": "Sentinel-GEO",
+     "status": "operational",
+     "orbit_regime": "GEO",
+     "country": "Allied Coalition",
+     "rcs_category": "medium",
+     "registered": true,
+     "launch_date": "2024-03-02",
+     "role": "primary"
+    },
+    {
+     "id": "OBJ-2025-088C",
+     "name": "OBJECT 2025-088C (unregistered)",
+     "norad_id": 61988,
+     "kind": "satellite",
+     "cospar_id": "2025-088C",
+     "operator_id": "OP-ZENOBIA-MAI",
+     "launch_id": "L-2025-088",
+     "parent_object_id": null,
+     "fragmentation_event_id": null,
+     "tle": {
+      "line1": "1 61988U 25088C   26264.50000000  .00000000  00000-0  00000-0 0  9990",
+      "line2": "2 61988   0.0449  89.3108 0009374 275.8238 312.2130  1.00202308    17"
+     },
+     "hbr_m": 3.0,
+     "mass_kg": 650.0,
+     "isp_s": null,
+     "bus_type": "unknown (registry: 'adapter debris')",
+     "status": "operational",
+     "orbit_regime": "GEO",
+     "country": "Zenobia",
+     "rcs_category": "medium",
+     "registered": false,
+     "launch_date": "2025-05-19",
+     "role": "secondary"
+    },
+    {
+     "id": "ZENOBIASAT-9",
+     "name": "ZENOBIASAT-9",
+     "norad_id": 61986,
+     "kind": "satellite",
+     "cospar_id": "2025-088A",
+     "operator_id": "OP-ZENOBIA-TELECOM",
+     "launch_id": "L-2025-088",
+     "parent_object_id": null,
+     "fragmentation_event_id": null,
+     "tle": {
+      "line1": "1 61986U 25088A   26264.50000000  .00000000  00000-0  00000-0 0  9998",
+      "line2": "2 61986   0.0522  92.3452 0345757 136.5150  86.4691  1.00070882    19"
+     },
+     "hbr_m": 10.0,
+     "mass_kg": 5100.0,
+     "isp_s": null,
+     "bus_type": "ZS-5000",
+     "status": "operational",
+     "orbit_regime": "GEO",
+     "country": "Zenobia",
+     "rcs_category": "medium",
+     "registered": true,
+     "launch_date": "2025-05-19",
+     "role": "neighbor"
+    }
+   ],
+   "graph": {
+    "operators": [
+     {
+      "id": "OP-ALLIED-DEFENSE-COMMS",
+      "name": "Allied Defense Communications Agency",
+      "country": "Allied Coalition",
+      "designation": "military",
+      "contact_protocol": "classified SATOPS desk",
+      "stc_responsive": true
+     },
+     {
+      "id": "OP-ZENOBIA-MAI",
+      "name": "Zenobia Ministry of Aerospace Industry",
+      "country": "Zenobia",
+      "designation": "military",
+      "contact_protocol": "none published",
+      "stc_responsive": false
+     },
+     {
+      "id": "OP-ZENOBIA-TELECOM",
+      "name": "Zenobia National Telecom",
+      "country": "Zenobia",
+      "designation": "commercial",
+      "contact_protocol": "ITU filing contact",
+      "stc_responsive": true
+     }
+    ],
+    "launch_events": [
+     {
+      "id": "L-2024-044",
+      "name": "AEGIS-COM 3 launch",
+      "launch_date": "2024-03-02",
+      "site": "Cape Canaveral SLC-41",
+      "booster": "Vulcan Centaur",
+      "cospar_launch_id": "2024-044",
+      "payload_ids": [
+       "AEGIS-COM-3"
+      ],
+      "declared_payload_count": 1
+     },
+     {
+      "id": "L-2025-088",
+      "name": "ZenobiaSat-9 launch",
+      "launch_date": "2025-05-19",
+      "site": "Zenobia Eastern Range",
+      "booster": "ZL-5 heavy",
+      "cospar_launch_id": "2025-088",
+      "payload_ids": [
+       "ZENOBIASAT-9",
+       "OBJ-2025-088C"
+      ],
+      "declared_payload_count": 1
+     }
+    ],
+    "ground_stations": [
+     {
+      "id": "GS-GEO-OPTICAL-1",
+      "name": "Allied GEO Optical Fence, Site 1",
+      "latitude_deg": -31.27,
+      "longitude_deg": 149.07,
+      "altitude_m": 1165.0,
+      "operator_id": null,
+      "sensor_type": "optical",
+      "min_elevation_deg": 20.0
+     }
+    ],
+    "edges": [
+     {
+      "type": "CO_LAUNCHED_WITH",
+      "source": "OBJ-2025-088C",
+      "target": "ZENOBIASAT-9",
+      "attrs": {}
+     },
+     {
+      "type": "ORBITAL_NEIGHBOR",
+      "source": "AEGIS-COM-3",
+      "target": "OBJ-2025-088C",
+      "attrs": {
+       "shell_km": 1.5,
+       "longitude_sep_deg": 0.05
+      }
+     },
+     {
+      "type": "ORBITAL_NEIGHBOR",
+      "source": "AEGIS-COM-3",
+      "target": "ZENOBIASAT-9",
+      "attrs": {
+       "shell_km": 3.0,
+       "longitude_sep_deg": 1.97
+      }
+     },
+     {
+      "type": "IN_CONJUNCTION_WITH",
+      "source": "AEGIS-COM-3",
+      "target": "OBJ-2025-088C",
+      "attrs": {
+       "tca": "2026-09-21T12:00:00+00:00",
+       "miss_km": 35.041,
+       "pc": 7.253741822187382e-35,
+       "regime": "low-velocity"
+      }
+     },
+     {
+      "type": "TRACKED_BY",
+      "source": "OBJ-2025-088C",
+      "target": "GS-GEO-OPTICAL-1",
+      "attrs": {}
+     }
+    ]
+   },
+   "conjunction": {
+    "primary_id": "AEGIS-COM-3",
+    "secondary_id": "OBJ-2025-088C",
+    "tca": "2026-09-21T12:00:00Z",
+    "frame": "J2000",
+    "states_pre": {
+     "AEGIS-COM-3": {
+      "epoch": "2026-09-21T12:00:00Z",
+      "r": [
+       30812.593087,
+       -28773.49127,
+       -97.633908
+      ],
+      "v": [
+       2.099098898,
+       2.247281564,
+       -0.008367483
+      ],
+      "frame": "J2000"
+     },
+     "OBJ-2025-088C": {
+      "epoch": "2026-09-21T12:00:00Z",
+      "r": [
+       30787.612039,
+       -28798.047931,
+       -96.735216
+      ],
+      "v": [
+       2.09964632,
+       2.24786643,
+       -0.007969662
+      ],
+      "frame": "J2000"
+     },
+     "ZENOBIASAT-9": {
+      "epoch": "2026-09-21T12:00:00Z",
+      "r": [
+       31804.406733,
+       -27715.765754,
+       -103.585841
+      ],
+      "v": [
+       2.099098898,
+       2.247281564,
+       -0.008367483
+      ],
+      "frame": "J2000"
+     }
+    },
+    "covariance_pre": {
+     "primary_rtn": [
+      [
+       0.25,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       1.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.25
+      ]
+     ],
+     "secondary_rtn": [
+      [
+       1.0,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       9.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       1.0
+      ]
+     ],
+     "note": "GEO optical-only orbits"
+    },
+    "states_post": null,
+    "covariance_post": null,
+    "screening_pc_threshold": 0.0001,
+    "cdm_reported_miss_km": null,
+    "cdm_reported_pc": null
+   },
+   "observations": [
+    {
+     "sensor_type": "optical",
+     "sensor_id": "GS-GEO-OPTICAL-1",
+     "epoch": "2026-09-21T02:00:00Z",
+     "description": "Astrometric arc confirms OBJ-2025-088C co-located within 40 km of AEGIS-COM 3 for 6 consecutive nights.",
+     "governance_level": "L0",
+     "effect": "kinematics.range_history_km",
+     "payload": {
+      "nights": 6
+     }
+    },
+    {
+     "sensor_type": "stc",
+     "sensor_id": "OP-ZENOBIA-MAI",
+     "epoch": "2026-09-21T04:00:00Z",
+     "description": "Coordination query sent to registered launch operator; no response in 8 h.",
+     "governance_level": "L1",
+     "effect": "none",
+     "payload": {
+      "responded": false
+     }
+    }
+   ],
+   "light_curve": null,
+   "kinematics": {
+    "object_id": "OBJ-2025-088C",
+    "element_history": [
+     {
+      "epoch": "2026-09-07T12:00:00Z",
+      "a_km": 42124.0,
+      "e": 0.0003,
+      "i_deg": 0.62,
+      "raan_deg": 95.14,
+      "source": "TLE"
+     },
+     {
+      "epoch": "2026-09-11T12:00:00Z",
+      "a_km": 42124.0,
+      "e": 0.0003,
+      "i_deg": 0.62,
+      "raan_deg": 95.1,
+      "source": "TLE"
+     },
+     {
+      "epoch": "2026-09-13T12:00:00Z",
+      "a_km": 42131.0,
+      "e": 0.0003,
+      "i_deg": 0.55,
+      "raan_deg": 95.08,
+      "source": "TLE"
+     },
+     {
+      "epoch": "2026-09-15T12:00:00Z",
+      "a_km": 42141.0,
+      "e": 0.0003,
+      "i_deg": 0.41,
+      "raan_deg": 95.06,
+      "source": "TLE"
+     },
+     {
+      "epoch": "2026-09-17T12:00:00Z",
+      "a_km": 42152.0,
+      "e": 0.0003,
+      "i_deg": 0.24,
+      "raan_deg": 95.04,
+      "source": "TLE"
+     },
+     {
+      "epoch": "2026-09-19T12:00:00Z",
+      "a_km": 42160.0,
+      "e": 0.0003,
+      "i_deg": 0.11,
+      "raan_deg": 95.02,
+      "source": "TLE"
+     },
+     {
+      "epoch": "2026-09-21T12:00:00Z",
+      "a_km": 42164.5,
+      "e": 0.0003,
+      "i_deg": 0.05,
+      "raan_deg": 95.0,
+      "source": "TLE"
+     }
+    ],
+    "residuals": {
+     "delta_i_deg": -0.57,
+     "delta_a_km": 40.5,
+     "dv_plane_change_mps": 30.6,
+     "dv_altitude_mps": 1.5,
+     "dv_total_estimated_mps": 32.9
+    },
+    "maneuver_history": [
+     {
+      "epoch": "2026-09-13T09:00:00Z",
+      "dv_mps": 5.4,
+      "direction": "normal_plus",
+      "announced": false
+     },
+     {
+      "epoch": "2026-09-14T09:00:00Z",
+      "dv_mps": 5.6,
+      "direction": "normal_plus",
+      "announced": false
+     },
+     {
+      "epoch": "2026-09-15T10:00:00Z",
+      "dv_mps": 5.5,
+      "direction": "normal_plus",
+      "announced": false
+     },
+     {
+      "epoch": "2026-09-16T08:00:00Z",
+      "dv_mps": 5.2,
+      "direction": "normal_plus",
+      "announced": false
+     },
+     {
+      "epoch": "2026-09-17T09:00:00Z",
+      "dv_mps": 4.9,
+      "direction": "normal_plus",
+      "announced": false
+     },
+     {
+      "epoch": "2026-09-18T10:00:00Z",
+      "dv_mps": 4.8,
+      "direction": "normal_plus",
+      "announced": false
+     },
+     {
+      "epoch": "2026-09-19T11:00:00Z",
+      "dv_mps": 1.5,
+      "direction": "prograde",
+      "announced": false
+     }
+    ],
+    "range_history_km": [
+     [
+      -14.0,
+      1520.0
+     ],
+     [
+      -10.0,
+      1480.0
+     ],
+     [
+      -8.0,
+      1100.0
+     ],
+     [
+      -6.0,
+      620.0
+     ],
+     [
+      -4.0,
+      210.0
+     ],
+     [
+      -3.0,
+      96.0
+     ],
+     [
+      -2.0,
+      48.0
+     ],
+     [
+      -1.0,
+      38.0
+     ],
+     [
+      0.0,
+      35.0
+     ]
+    ],
+    "notes": "Registry lists 2025-088C as launch adapter debris; observed dv budget (~33 m/s) is inconsistent with an inert object."
+   },
+   "cam_policy": null,
+   "expected": {
+    "classification": "covert_rpo_shadowing",
+    "severity": "CRITICAL",
+    "governance_level": "L2",
+    "recommended_action": "L1_OPERATOR_ADVISORY + L2_UN_REGISTRY_REPORT",
+    "key_numbers": {
+     "range_km": 35.04126139282238,
+     "dv_total_mps": 32.9,
+     "delta_i_deg": 0.57,
+     "pc": 7.253741822187382e-35
+    }
+   }
+  },
+  {
+   "id": "S3",
+   "title": "Sudden Drag Anomaly -> Tumbling Spacecraft Triage",
+   "trigger_type": "SIGNAL",
+   "summary": "TERRA-EYE 4 stops downlinking and its semi-major axis decays 4x faster than its neighbours. Optical photometry must decide between a controlled safe-mode and an uncontrolled tumble.",
+   "objects": [
+    {
+     "id": "TERRA-EYE-4",
+     "name": "TERRA-EYE 4",
+     "norad_id": 58311,
+     "kind": "satellite",
+     "cospar_id": "2023-170B",
+     "operator_id": "OP-GEOVISTA",
+     "launch_id": "L-2023-170",
+     "parent_object_id": null,
+     "fragmentation_event_id": null,
+     "tle": {
+      "line1": "1 58311U 23170B   26263.93750000  .00000000  00000-0  42000-3 0  9993",
+      "line2": "2 58311  97.4200 210.7000 0001000  95.0000 265.0000 15.22534116    11"
+     },
+     "hbr_m": 4.0,
+     "mass_kg": 180.0,
+     "isp_s": null,
+     "bus_type": "GV-180 EO",
+     "status": "degraded",
+     "orbit_regime": "LEO",
+     "country": "Canada",
+     "rcs_category": "medium",
+     "registered": true,
+     "launch_date": "2023-11-11",
+     "role": "primary"
+    },
+    {
+     "id": "TERRA-EYE-3",
+     "name": "TERRA-EYE 3",
+     "norad_id": 58310,
+     "kind": "satellite",
+     "cospar_id": "2023-170A",
+     "operator_id": "OP-GEOVISTA",
+     "launch_id": "L-2023-170",
+     "parent_object_id": null,
+     "fragmentation_event_id": null,
+     "tle": {
+      "line1": "1 58310U 23170A   26263.93750000  .00000000  00000-0  12000-3 0  9999",
+      "line2": "2 58310  97.4200 210.7000 0001000  95.0000 290.0000 15.20278457    19"
+     },
+     "hbr_m": 4.0,
+     "mass_kg": 180.0,
+     "isp_s": null,
+     "bus_type": "GV-180 EO",
+     "status": "operational",
+     "orbit_regime": "LEO",
+     "country": "Canada",
+     "rcs_category": "medium",
+     "registered": true,
+     "launch_date": "2023-11-11",
+     "role": "neighbor"
+    },
+    {
+     "id": "POLARVIEW-2",
+     "name": "POLARVIEW-2",
+     "norad_id": 57600,
+     "kind": "satellite",
+     "cospar_id": "2023-120C",
+     "operator_id": "OP-POLARVIEW",
+     "launch_id": "L-2023-120",
+     "parent_object_id": null,
+     "fragmentation_event_id": null,
+     "tle": {
+      "line1": "1 57600U 23120C   26263.93750000  .00000000  00000-0  10000-3 0  9993",
+      "line2": "2 57600  97.4500 214.0000 0001000  90.0000  20.0000 15.17962267    11"
+     },
+     "hbr_m": 3.0,
+     "mass_kg": 120.0,
+     "isp_s": null,
+     "bus_type": "PV-120",
+     "status": "operational",
+     "orbit_regime": "LEO",
+     "country": "Finland",
+     "rcs_category": "medium",
+     "registered": true,
+     "launch_date": "2023-08-03",
+     "role": "neighbor"
+    }
+   ],
+   "graph": {
+    "operators": [
+     {
+      "id": "OP-GEOVISTA",
+      "name": "GeoVista Imaging",
+      "country": "Canada",
+      "designation": "commercial",
+      "contact_protocol": "24/7 MOC phone + STC",
+      "stc_responsive": true
+     },
+     {
+      "id": "OP-POLARVIEW",
+      "name": "PolarView Oy",
+      "country": "Finland",
+      "designation": "commercial",
+      "contact_protocol": "STC email",
+      "stc_responsive": true
+     }
+    ],
+    "launch_events": [
+     {
+      "id": "L-2023-170",
+      "name": "Transporter-9 rideshare",
+      "launch_date": "2023-11-11",
+      "site": "Vandenberg SLC-4E",
+      "booster": "Falcon 9 B5",
+      "cospar_launch_id": "2023-170",
+      "payload_ids": [
+       "TERRA-EYE-3",
+       "TERRA-EYE-4"
+      ],
+      "declared_payload_count": 90
+     },
+     {
+      "id": "L-2023-120",
+      "name": "Electron 'We Love The Nightlife'",
+      "launch_date": "2023-08-03",
+      "site": "Mahia LC-1B",
+      "booster": "Electron",
+      "cospar_launch_id": "2023-120",
+      "payload_ids": [
+       "POLARVIEW-2"
+      ],
+      "declared_payload_count": 1
+     }
+    ],
+    "ground_stations": [
+     {
+      "id": "GS-FTN-3",
+      "name": "Falcon Telescope Network, Site 3",
+      "latitude_deg": 38.99,
+      "longitude_deg": -104.86,
+      "altitude_m": 2000.0,
+      "operator_id": null,
+      "sensor_type": "optical",
+      "min_elevation_deg": 15.0
+     },
+     {
+      "id": "GS-SVALBARD",
+      "name": "Svalbard SvalSat",
+      "latitude_deg": 78.23,
+      "longitude_deg": 15.39,
+      "altitude_m": 460.0,
+      "operator_id": "OP-GEOVISTA",
+      "sensor_type": "telemetry",
+      "min_elevation_deg": 10.0
+     }
+    ],
+    "edges": [
+     {
+      "type": "ORBITAL_NEIGHBOR",
+      "source": "TERRA-EYE-4",
+      "target": "TERRA-EYE-3",
+      "attrs": {
+       "shell_km": 6.8
+      }
+     },
+     {
+      "type": "ORBITAL_NEIGHBOR",
+      "source": "TERRA-EYE-3",
+      "target": "POLARVIEW-2",
+      "attrs": {
+       "shell_km": 7.0
+      }
+     },
+     {
+      "type": "CO_LAUNCHED_WITH",
+      "source": "TERRA-EYE-4",
+      "target": "TERRA-EYE-3",
+      "attrs": {}
+     },
+     {
+      "type": "TRACKED_BY",
+      "source": "TERRA-EYE-4",
+      "target": "GS-SVALBARD",
+      "attrs": {}
+     },
+     {
+      "type": "TRACKED_BY",
+      "source": "TERRA-EYE-4",
+      "target": "GS-FTN-3",
+      "attrs": {}
+     }
+    ]
+   },
+   "conjunction": null,
+   "observations": [
+    {
+     "sensor_type": "telemetry",
+     "sensor_id": "GS-SVALBARD",
+     "epoch": "2026-09-19T15:30:00Z",
+     "description": "Last valid frame; carrier lost on next 3 passes.",
+     "governance_level": "L0",
+     "effect": "none",
+     "payload": {
+      "passes_missed": 3
+     }
+    },
+    {
+     "sensor_type": "optical",
+     "sensor_id": "GS-FTN-3",
+     "epoch": "2026-09-20T20:30:00Z",
+     "description": "60 s photometric light curve at 10 Hz.",
+     "governance_level": "L0",
+     "effect": "light_curve",
+     "payload": {
+      "filter": "clear",
+      "exposure_ms": 100
+     }
+    }
+   ],
+   "light_curve": {
+    "sample_rate_hz": 10.0,
+    "duration_s": 60.0,
+    "dominant_frequency_hz": 0.4,
+    "harmonic_frequency_hz": 0.8,
+    "amplitude_mag": 0.6,
+    "mean_mag": 7.5,
+    "noise_sigma_mag": 0.05,
+    "seed": 42,
+    "samples_mag": [
+     7.8708,
+     7.9622,
+     8.1411,
+     8.1704,
+     7.9876,
+     7.944,
+     7.9241,
+     7.8149,
+     7.7588,
+     7.6635,
+     7.7062,
+     7.6529,
+     7.5493,
+     7.5038,
+     7.3395,
+     7.118,
+     7.0195,
+     6.8142,
+     6.8153,
+     6.7484,
+     6.8029,
+     6.919,
+     7.2187,
+     7.3904,
+     7.6203,
+     7.8379,
+     8.0408,
+     8.1219,
+     8.144,
+     8.1067,
+     8.1161,
+     7.8974,
+     7.8051,
+     7.7189,
+     7.7369,
+     7.7187,
+     7.6083,
+     7.504,
+     7.4062,
+     7.3487,
+     7.1982,
+     7.0282,
+     6.8289,
+     6.783,
+     6.7567,
+     6.8231,
+     6.9966,
+     7.1687,
+     7.4321,
+     7.6451,
+     7.87,
+     8.0458,
+     8.0308,
+     8.1074,
+     8.0617,
+     7.9771,
+     7.904,
+     7.9055,
+     7.7163,
+     7.7545,
+     7.5781,
+     7.5972,
+     7.5541,
+     7.4768,
+     7.3517,
+     7.2007,
+     6.9836,
+     6.839,
+     6.8143,
+     6.7413,
+     6.7483,
+     6.8964,
+     7.1116,
+     7.423,
+     7.6488,
+     7.8901,
+     7.9928,
+     8.1116,
+     8.1547,
+     8.0697,
+     8.0319,
+     7.8846,
+     7.8126,
+     7.7406,
+     7.6463,
+     7.6866,
+     7.5905,
+     7.5466,
+     7.4715,
+     7.3385,
+     7.1943,
+     6.9961,
+     6.841,
+     6.7674,
+     6.6665,
+     6.7398,
+     6.8869,
+     7.1077,
+     7.4181,
+     7.5964,
+     7.8366,
+     8.0792,
+     8.0858,
+     8.1602,
+     8.0385,
+     7.9988,
+     7.8702,
+     7.8138,
+     7.8017,
+     7.6198,
+     7.684,
+     7.6259,
+     7.5163,
+     7.3751,
+     7.3198,
+     7.1345,
+     7.0127,
+     6.8632,
+     6.8515,
+     6.7389,
+     6.7609,
+     6.962,
+     7.1685,
+     7.4661,
+     7.6834,
+     7.8734,
+     8.0874,
+     8.0442,
+     8.0914,
+     8.0388,
+     7.9896,
+     7.8489,
+     7.8625,
+     7.7485,
+     7.6326,
+     7.6115,
+     7.6297,
+     7.5879,
+     7.5473,
+     7.4619,
+     7.1817,
+     6.9516,
+     6.7555,
+     6.7848,
+     6.7102,
+     6.7914,
+     6.9225,
+     7.1505,
+     7.4514,
+     7.6495,
+     7.8476,
+     7.9624,
+     8.0199,
+     8.0991,
+     8.0825,
+     8.0975,
+     7.9243,
+     7.8798,
+     7.7347,
+     7.6469,
+     7.614,
+     7.5777,
+     7.6524,
+     7.4064,
+     7.3581,
+     7.1158,
+     7.0476,
+     6.8814,
+     6.7636,
+     6.7488,
+     6.7794,
+     6.9754,
+     7.1348,
+     7.3369,
+     7.5778,
+     7.8642,
+     8.0931,
+     8.1116,
+     8.1174,
+     8.0995,
+     8.0744,
+     7.9287,
+     7.8102,
+     7.815,
+     7.7276,
+     7.7391,
+     7.6231,
+     7.4848,
+     7.379,
+     7.3987,
+     7.2472,
+     6.9921,
+     6.843,
+     6.8445,
+     6.6955,
+     6.7674,
+     6.9852,
+     7.1378,
+     7.3979,
+     7.6335,
+     7.8724,
+     8.0846,
+     8.1082,
+     8.1556,
+     7.9827,
+     8.0066,
+     7.8756,
+     7.7698,
+     7.7157,
+     7.6894,
+     7.7081,
+     7.5477,
+     7.5475,
+     7.4232,
+     7.2998,
+     7.2111,
+     7.0279,
+     6.929,
+     6.7637,
+     6.7161,
+     6.8009,
+     6.9652,
+     7.1664,
+     7.3439,
+     7.6462,
+     7.867,
+     8.1401,
+     8.1975,
+     8.0807,
+     8.0708,
+     7.9359,
+     7.8882,
+     7.8465,
+     7.8199,
+     7.6697,
+     7.6296,
+     7.5066,
+     7.5379,
+     7.3943,
+     7.2897,
+     7.1171,
+     6.9963,
+     6.7743,
+     6.698,
+     6.8573,
+     6.7478,
+     6.8982,
+     7.2494,
+     7.5434,
+     7.5831,
+     7.8371,
+     8.0313,
+     8.1901,
+     8.074,
+     8.0729,
+     8.0479,
+     7.9395,
+     7.8119,
+     7.7529,
+     7.6374,
+     7.6504,
+     7.6007,
+     7.5576,
+     7.4197,
+     7.3397,
+     7.2116,
+     7.0088,
+     6.8797,
+     6.7741,
+     6.7509,
+     6.776,
+     6.9689,
+     7.1527,
+     7.5028,
+     7.7203,
+     7.8748,
+     7.976,
+     8.048,
+     8.1829,
+     8.0983,
+     8.0331,
+     7.8305,
+     7.8771,
+     7.7824,
+     7.6506,
+     7.6387,
+     7.6272,
+     7.5486,
+     7.4328,
+     7.311,
+     7.1484,
+     7.0087,
+     6.9357,
+     6.6431,
+     6.739,
+     6.8209,
+     6.9679,
+     7.1389,
+     7.3103,
+     7.6581,
+     7.9419,
+     7.9375,
+     8.1468,
+     8.1069,
+     8.0821,
+     7.9564,
+     7.901,
+     7.8957,
+     7.7888,
+     7.7927,
+     7.7211,
+     7.6359,
+     7.6332,
+     7.4694,
+     7.3576,
+     7.1462,
+     7.0044,
+     6.8273,
+     6.8209,
+     6.6919,
+     6.8512,
+     6.9435,
+     7.2161,
+     7.4357,
+     7.7327,
+     7.8921,
+     7.9356,
+     8.1003,
+     8.0648,
+     8.0593,
+     8.0846,
+     7.9496,
+     7.7958,
+     7.709,
+     7.7078,
+     7.6014,
+     7.5804,
+     7.5616,
+     7.5052,
+     7.3466,
+     7.0464,
+     7.0162,
+     6.8657,
+     6.7921,
+     6.8317,
+     6.709,
+     6.9235,
+     7.1871,
+     7.3191,
+     7.7155,
+     7.874,
+     8.0565,
+     8.0751,
+     8.1641,
+     8.1386,
+     8.0207,
+     7.9295,
+     7.8442,
+     7.7165,
+     7.6987,
+     7.6546,
+     7.6331,
+     7.596,
+     7.3945,
+     7.3099,
+     7.2351,
+     6.9639,
+     6.821,
+     6.7815,
+     6.7931,
+     6.8127,
+     7.0195,
+     7.2004,
+     7.4402,
+     7.6694,
+     7.9719,
+     8.0039,
+     8.0034,
+     8.2036,
+     8.0623,
+     8.0145,
+     7.9832,
+     7.7506,
+     7.6971,
+     7.6261,
+     7.6226,
+     7.636,
+     7.5722,
+     7.4613,
+     7.2455,
+     7.0455,
+     7.0037,
+     6.8386,
+     6.7944,
+     6.786,
+     6.819,
+     6.9911,
+     7.169,
+     7.4247,
+     7.6064,
+     7.8466,
+     8.024,
+     8.1447,
+     8.1037,
+     8.1112,
+     7.9958,
+     7.9119,
+     7.8722,
+     7.66,
+     7.6413,
+     7.5882,
+     7.4973,
+     7.5121,
+     7.4849,
+     7.3019,
+     7.1709,
+     7.0555,
+     6.9285,
+     6.7679,
+     6.8185,
+     6.8167,
+     6.9112,
+     7.1278,
+     7.3241,
+     7.5973,
+     7.8377,
+     8.0544,
+     8.1897,
+     8.0543,
+     8.1048,
+     7.957,
+     7.9415,
+     7.8241,
+     7.6681,
+     7.7525,
+     7.632,
+     7.5873,
+     7.4925,
+     7.4147,
+     7.3376,
+     7.1515,
+     7.0175,
+     6.8802,
+     6.8374,
+     6.7337,
+     6.7383,
+     7.0064,
+     7.1409,
+     7.4539,
+     7.6609,
+     7.849,
+     8.0316,
+     8.2012,
+     8.2272,
+     8.0886,
+     8.0171,
+     7.9716,
+     7.7884,
+     7.7763,
+     7.7048,
+     7.678,
+     7.5723,
+     7.4665,
+     7.3438,
+     7.2603,
+     7.1381,
+     6.9864,
+     6.959,
+     6.8267,
+     6.7028,
+     6.8295,
+     6.9327,
+     7.1433,
+     7.4074,
+     7.6726,
+     7.8386,
+     8.0674,
+     8.0465,
+     8.1237,
+     8.2151,
+     8.0202,
+     7.9894,
+     7.8353,
+     7.7887,
+     7.7033,
+     7.6538,
+     7.575,
+     7.5675,
+     7.4049,
+     7.3494,
+     7.2153,
+     7.0194,
+     6.8478,
+     6.7941,
+     6.7354,
+     6.8589,
+     6.8615,
+     7.1407,
+     7.2986,
+     7.5669,
+     7.9237,
+     8.0589,
+     8.0677,
+     8.0482,
+     7.9369,
+     7.9819,
+     8.0388,
+     7.8524,
+     7.7317,
+     7.7294,
+     7.5842,
+     7.5991,
+     7.551,
+     7.4431,
+     7.3557,
+     7.1782,
+     7.0344,
+     6.8277,
+     6.8163,
+     6.8323,
+     6.7636,
+     6.9087,
+     7.2243,
+     7.3886,
+     7.7119,
+     7.8334,
+     8.0869,
+     8.1102,
+     8.1363,
+     8.1634,
+     7.991,
+     7.8707,
+     7.8083,
+     7.7823,
+     7.6278,
+     7.6941,
+     7.587,
+     7.6034,
+     7.3277,
+     7.2768,
+     7.0767,
+     6.9597,
+     6.8745,
+     6.7624,
+     6.7382,
+     6.8042,
+     6.9632,
+     7.1071,
+     7.4335,
+     7.6748,
+     7.8748,
+     8.042,
+     8.1184,
+     8.2251,
+     8.0808,
+     7.9937,
+     7.8801,
+     7.7791,
+     7.6974,
+     7.6617,
+     7.6587,
+     7.6307,
+     7.5486,
+     7.4092,
+     7.3612,
+     7.198,
+     6.993,
+     6.8295,
+     6.7988,
+     6.7603,
+     6.7397,
+     6.9497,
+     7.1706,
+     7.3532,
+     7.6512,
+     7.7828,
+     8.081,
+     8.166,
+     8.1107,
+     8.1033,
+     7.8886,
+     7.8599,
+     7.816,
+     7.706,
+     7.7418,
+     7.7621,
+     7.5551,
+     7.5041,
+     7.4592,
+     7.3967,
+     7.0999,
+     7.0135,
+     6.9532,
+     6.6888,
+     6.6868,
+     6.7909,
+     6.927,
+     7.1982,
+     7.4102,
+     7.5529
+    ]
+   },
+   "kinematics": {
+    "object_id": "TERRA-EYE-4",
+    "element_history": [
+     {
+      "epoch": "2026-09-14T22:30:00Z",
+      "a_km": 6878.62,
+      "e": 0.0011,
+      "i_deg": 97.42,
+      "raan_deg": 210.7,
+      "source": "TLE"
+     },
+     {
+      "epoch": "2026-09-15T22:30:00Z",
+      "a_km": 6878.54,
+      "e": 0.0011,
+      "i_deg": 97.42,
+      "raan_deg": 210.7,
+      "source": "TLE"
+     },
+     {
+      "epoch": "2026-09-16T22:30:00Z",
+      "a_km": 6878.46,
+      "e": 0.0011,
+      "i_deg": 97.42,
+      "raan_deg": 210.7,
+      "source": "TLE"
+     },
+     {
+      "epoch": "2026-09-17T22:30:00Z",
+      "a_km": 6878.14,
+      "e": 0.0011,
+      "i_deg": 97.42,
+      "raan_deg": 210.7,
+      "source": "TLE"
+     },
+     {
+      "epoch": "2026-09-18T22:30:00Z",
+      "a_km": 6877.71,
+      "e": 0.0011,
+      "i_deg": 97.42,
+      "raan_deg": 210.7,
+      "source": "TLE"
+     },
+     {
+      "epoch": "2026-09-19T22:30:00Z",
+      "a_km": 6877.04,
+      "e": 0.0011,
+      "i_deg": 97.42,
+      "raan_deg": 210.7,
+      "source": "TLE"
+     },
+     {
+      "epoch": "2026-09-20T22:30:00Z",
+      "a_km": 6876.34,
+      "e": 0.0011,
+      "i_deg": 97.42,
+      "raan_deg": 210.7,
+      "source": "TLE"
+     }
+    ],
+    "residuals": {
+     "decay_rate_observed_km_day": -0.7,
+     "decay_rate_nominal_km_day": -0.08,
+     "ballistic_coefficient_ratio": 3.1,
+     "hours_since_last_telemetry": 31.0
+    },
+    "maneuver_history": [],
+    "range_history_km": [],
+    "notes": "Neighbour TERRA-EYE 3 (same bus, same shell) decays at 0.09 km/day over the same window; space weather Kp <= 3, so atmosphere is not the cause."
+   },
+   "cam_policy": null,
+   "expected": {
+    "classification": "adcs_failure_tumbling",
+    "severity": "WARNING",
+    "governance_level": "L1",
+    "recommended_action": "RECLASSIFY_UNCONTROLLED + NEIGHBOR_ADVISORY",
+    "key_numbers": {
+     "tumble_frequency_hz": 0.4,
+     "decay_ratio": 8.75,
+     "ballistic_coefficient_ratio": 3.1
+    }
+   }
+  },
+  {
+   "id": "S4",
+   "title": "Imminent Debris Conjunction -> Human-Approved CAM Burn",
+   "trigger_type": "CDM",
+   "summary": "A 46 m miss with a spent Zenit stage under tight covariance (Pc 5.2e-3). No sensing can lower the risk; the agent must plan a minimum-dv burn, screen it, and route it to the FDO.",
+   "objects": [
+    {
+     "id": "METEOSTAR-2",
+     "name": "METEOSTAR-2",
+     "norad_id": 60021,
+     "kind": "satellite",
+     "cospar_id": "2024-188A",
+     "operator_id": "OP-EUROMET",
+     "launch_id": "L-2024-188",
+     "parent_object_id": null,
+     "fragmentation_event_id": null,
+     "tle": {
+      "line1": "1 60021U 24188A   26266.61979167  .00000000  00000-0  21000-4 0  9997",
+      "line2": "2 60021  98.7000 302.6000 0001000  88.0000 147.0000 14.21584239    15"
+     },
+     "hbr_m": 8.0,
+     "mass_kg": 1200.0,
+     "isp_s": 220.0,
+     "bus_type": "MetBus-1200 (hydrazine)",
+     "status": "operational",
+     "orbit_regime": "LEO",
+     "country": "EU",
+     "rcs_category": "medium",
+     "registered": true,
+     "launch_date": "2024-10-04",
+     "role": "primary"
+    },
+    {
+     "id": "SL16-RB-90211",
+     "name": "SL-16 R/B (Zenit-2 stage 2)",
+     "norad_id": 90211,
+     "kind": "debris",
+     "cospar_id": "",
+     "operator_id": null,
+     "launch_id": "L-1992-093",
+     "parent_object_id": null,
+     "fragmentation_event_id": null,
+     "tle": {
+      "line1": "1 90211U 92093B   26266.61979167  .00000000  00000-0  00000-0 0  9994",
+      "line2": "2 90211  56.1688 222.2650 1615771 257.3089   0.0377 10.90877172    10"
+     },
+     "hbr_m": 17.0,
+     "mass_kg": null,
+     "isp_s": null,
+     "bus_type": "",
+     "status": "operational",
+     "orbit_regime": "LEO",
+     "country": "Russia/Ukraine",
+     "rcs_category": "large",
+     "registered": true,
+     "launch_date": null,
+     "role": "secondary"
+    },
+    {
+     "id": "METEOSTAR-1",
+     "name": "METEOSTAR-1",
+     "norad_id": 60022,
+     "kind": "satellite",
+     "cospar_id": "2024-188B",
+     "operator_id": "OP-EUROMET",
+     "launch_id": "L-2024-188",
+     "parent_object_id": null,
+     "fragmentation_event_id": null,
+     "tle": {
+      "line1": "1 60022U 24188B   26266.61979167  .00000000  00000-0  21000-4 0  9998",
+      "line2": "2 60022  98.7000 302.6000 0001000  88.0000 327.0000 14.21584239    16"
+     },
+     "hbr_m": 8.0,
+     "mass_kg": 1200.0,
+     "isp_s": null,
+     "bus_type": "MetBus-1200",
+     "status": "operational",
+     "orbit_regime": "LEO",
+     "country": "EU",
+     "rcs_category": "medium",
+     "registered": true,
+     "launch_date": "2024-10-04",
+     "role": "catalog"
+    },
+    {
+     "id": "SENTINEL-CLASS-EO",
+     "name": "SENTINEL-CLASS EO",
+     "norad_id": 43010,
+     "kind": "satellite",
+     "cospar_id": "2017-064A",
+     "operator_id": "OP-EUROMET",
+     "launch_id": null,
+     "parent_object_id": null,
+     "fragmentation_event_id": null,
+     "tle": {
+      "line1": "1 43010U 17064A   26266.61979167  .00000000  00000-0  15000-4 0  9994",
+      "line2": "2 43010  98.6000 310.2000 0001000  90.0000 200.0000 14.31716198    13"
+     },
+     "hbr_m": 6.0,
+     "mass_kg": 1100.0,
+     "isp_s": null,
+     "bus_type": "Astrobus-L",
+     "status": "operational",
+     "orbit_regime": "LEO",
+     "country": "EU",
+     "rcs_category": "medium",
+     "registered": true,
+     "launch_date": "2017-10-13",
+     "role": "catalog"
+    }
+   ],
+   "graph": {
+    "operators": [
+     {
+      "id": "OP-EUROMET",
+      "name": "EuroMet Agency",
+      "country": "EU",
+      "designation": "civil_government",
+      "contact_protocol": "FDO desk + STC",
+      "stc_responsive": true
+     },
+     {
+      "id": "OP-UKR-LEGACY",
+      "name": "Yuzhnoye / legacy Zenit operator",
+      "country": "Ukraine",
+      "designation": "unknown",
+      "contact_protocol": "none (spent stage)",
+      "stc_responsive": false
+     }
+    ],
+    "launch_events": [
+     {
+      "id": "L-2024-188",
+      "name": "MeteoStar dual launch",
+      "launch_date": "2024-10-04",
+      "site": "Kourou ELA-4",
+      "booster": "Ariane 6",
+      "cospar_launch_id": "2024-188",
+      "payload_ids": [
+       "METEOSTAR-1",
+       "METEOSTAR-2"
+      ],
+      "declared_payload_count": 2
+     },
+     {
+      "id": "L-1992-093",
+      "name": "Tselina-2 launch",
+      "launch_date": "1992-12-25",
+      "site": "Baikonur 45/1",
+      "booster": "Zenit-2",
+      "cospar_launch_id": "1992-093",
+      "payload_ids": [
+       "SL16-RB-90211"
+      ],
+      "declared_payload_count": 1
+     }
+    ],
+    "ground_stations": [
+     {
+      "id": "GS-TIRA",
+      "name": "TIRA radar (Wachtberg)",
+      "latitude_deg": 50.62,
+      "longitude_deg": 7.13,
+      "altitude_m": 250.0,
+      "operator_id": null,
+      "sensor_type": "radar",
+      "min_elevation_deg": 5.0
+     },
+     {
+      "id": "GS-EUROMET-FDO",
+      "name": "EuroMet Flight Dynamics Centre",
+      "latitude_deg": 49.87,
+      "longitude_deg": 8.65,
+      "altitude_m": 0.0,
+      "operator_id": "OP-EUROMET",
+      "sensor_type": "telemetry",
+      "min_elevation_deg": 10.0
+     }
+    ],
+    "edges": [
+     {
+      "type": "ORBITAL_NEIGHBOR",
+      "source": "METEOSTAR-2",
+      "target": "METEOSTAR-1",
+      "attrs": {
+       "shell_km": 0.2
+      }
+     },
+     {
+      "type": "CO_LAUNCHED_WITH",
+      "source": "METEOSTAR-2",
+      "target": "METEOSTAR-1",
+      "attrs": {}
+     },
+     {
+      "type": "IN_CONJUNCTION_WITH",
+      "source": "METEOSTAR-2",
+      "target": "SL16-RB-90211",
+      "attrs": {
+       "tca": "2026-09-23T14:52:30+00:00",
+       "miss_km": 0.0457,
+       "pc": 0.005199999999919205
+      }
+     },
+     {
+      "type": "TRACKED_BY",
+      "source": "SL16-RB-90211",
+      "target": "GS-TIRA",
+      "attrs": {}
+     },
+     {
+      "type": "TRACKED_BY",
+      "source": "METEOSTAR-2",
+      "target": "GS-EUROMET-FDO",
+      "attrs": {}
+     }
+    ]
+   },
+   "conjunction": {
+    "primary_id": "METEOSTAR-2",
+    "secondary_id": "SL16-RB-90211",
+    "tca": "2026-09-23T14:52:30Z",
+    "frame": "J2000",
+    "states_pre": {
+     "METEOSTAR-2": {
+      "epoch": "2026-09-23T14:52:30Z",
+      "r": [
+       -1460.577643,
+       3965.312863,
+       -5836.554532
+      ],
+      "v": [
+       3.784178162,
+       -4.808219878,
+       -4.215966547
+      ],
+      "frame": "J2000"
+     },
+     "SL16-RB-90211": {
+      "epoch": "2026-09-23T14:52:30Z",
+      "r": [
+       -1460.589836,
+       3965.289682,
+       -5836.591922
+      ],
+      "v": [
+       -6.471991047,
+       -4.497730777,
+       -1.438451527
+      ],
+      "frame": "J2000"
+     }
+    },
+    "covariance_pre": {
+     "primary_rtn": [
+      [
+       0.0009,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.0064,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0009
+      ]
+     ],
+     "secondary_rtn": [
+      [
+       0.0363848209321377,
+       0.0,
+       0.0
+      ],
+      [
+       0.0,
+       0.1455392837285508,
+       0.0
+      ],
+      [
+       0.0,
+       0.0,
+       0.0363848209321377
+      ]
+     ],
+     "note": "tight covariance from 4 radar tracks over 48 h; secondary sigma_R=0.1907 km solved so Pc=5.2e-3"
+    },
+    "states_post": null,
+    "covariance_post": null,
+    "screening_pc_threshold": 0.0001,
+    "cdm_reported_miss_km": 0.0457,
+    "cdm_reported_pc": 0.005199999999919205
+   },
+   "observations": [
+    {
+     "sensor_type": "radar",
+     "sensor_id": "GS-TIRA",
+     "epoch": "2026-09-23T00:52:30Z",
+     "description": "4th consecutive TIRA track; covariance already converged, further sensing yields <2% volume reduction.",
+     "governance_level": "L0",
+     "effect": "none",
+     "payload": {
+      "tracks": 4,
+      "volume_reduction_pct": 1.8
+     }
+    }
+   ],
+   "light_curve": null,
+   "kinematics": null,
+   "cam_policy": {
+    "lead_time_s": 2400.0,
+    "target_pc": 1e-06,
+    "min_standoff_km": 1.8,
+    "spacecraft_mass_kg": 1200.0,
+    "isp_s": 220.0,
+    "screening_window_s": 6000.0,
+    "screening_catalog_ids": [
+     "METEOSTAR-1",
+     "SENTINEL-CLASS-EO"
+    ]
+   },
+   "expected": {
+    "classification": "debris_collision_risk_confirmed",
+    "severity": "CRITICAL",
+    "governance_level": "L2",
+    "recommended_action": "EXECUTE_CAM_AFTER_FDO_SIGNOFF",
+    "key_numbers": {
+     "pc": 0.005199999999919205,
+     "miss_km": 0.04565084884208227,
+     "dv_nominal_mps": 0.35,
+     "lead_time_min": 40.0
+    }
+   }
+  }
+ ]
+}

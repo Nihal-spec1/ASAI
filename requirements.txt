@@ -1,0 +1,13 @@
+streamlit==1.64.0
+plotly==7.1.0
+pydeck==0.9.3
+networkx==3.6.1
+sgp4==2.27
+skyfield==1.55
+jplephem==2.24
+scipy==1.17.1
+numpy==2.4.6
+pandas==3.0.6
+pydantic==2.13.5
+groq==1.7.0
+python-dotenv==1.2.3
